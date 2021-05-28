@@ -1,4 +1,4 @@
-# colorCycles - a Javascript class to transition between font-colors
+# ColorCycles - a Javascript class to transition between font-colors
 
 -----
 
