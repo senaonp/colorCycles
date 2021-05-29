@@ -5,6 +5,13 @@
 ## ColorCycles preview example:
 <img src="./assets/colorCycles.gif" width="70%" height="auto">
 
+## Features
+- cycle through an array of specified text colors
+- apply color cycling to HTML elements through queries
+- specify pause and transition time when updating between text colors
+- create multiple custom color cycles by instantiating new ColorCycle objects
+- a Typescript implementation is also included in the `typescript-version` folder
+
 ## Usage
 - the logic for updating colors in HTML elements is in `class ColorCycles` in `colorCycles.js`
 - a ColorCycles instance is initialized through a dictionary with the keys `colors`, `pause`, `transition`, and `elemQueries`:
