@@ -1,4 +1,4 @@
-# ColorCycles - a Javascript class to transition between font-colors
+# ColorCycles - a Javascript class to periodically cycle between text colors
 
 -----
 
@@ -19,7 +19,10 @@ let myTest = new ColorCycles({
 myTest.startColors(); // do the color cycles
 
 /*
- * myTest will update in the font-color sequence of yellow then pink, then teal, then springgreen, and repeat; during each font-color cycle it will pause for one second and then transition to the next color in 0.5 seconds; this behavior will be applied to the HTML elements queried by the string "#testText"
+ * myTest will update in the text color sequence of yellow then pink, then teal, then springgreen, and repeat;
+ * during each font-color cycle it will pause for one second and then transition to the next color in 0.5 seconds;
+ * this behavior will be applied to the HTML elements queried by the string "#testText"
+ *
  * the call to the instance's startColors() function will initialize the color cycling behavior.
  */
 ```

@@ -15,8 +15,8 @@ class ColorCycles {
 		for (let i=0; i<this.elemQueries.length; i+=1) {
 			let elems = document.querySelectorAll(this.elemQueries[i]);
 			for (let j=0; j<elems.length; j+=1) {
-				elems[j].style.transition = thisObj.transition;
-				elems[j].style.color = thisObj.colors[thisObj.currentColorIndex];
+				elems[j].style.transition = this.transition;
+				elems[j].style.color = this.colors[this.currentColorIndex];
 				setInterval(function() {
 					elems[j].style.color = thisObj.colors[thisObj.currentColorIndex];
 				}, this.pause);
