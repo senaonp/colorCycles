@@ -2,17 +2,17 @@
 
 -----
 
-## colorCycles preview example:
+## ColorCycles preview example:
 <img src="./assets/colorCycles.gif" width="70%" height="auto">
 
-## usage
+## Usage
 - the logic for updating colors in HTML elements is in `class ColorCycles` in `colorCycles.js`
 - a ColorCycles instance is initialized through a dictionary with the keys `colors`, `pause`, `transition`, and `elemQueries`:
 - an example initialization of ColorCycles is:
 ```
 let myTest = new ColorCycles({
 	colors: ["yellow", "pink", "teal", "springgreen"],
-	pause: '1000',
+	pause: 1000,
 	transition: '0.5s',
 	elemQueries: ["#testText"],
 });
@@ -20,7 +20,7 @@ myTest.startColors(); // do the color cycles
 
 /*
  * myTest will update in the text color sequence of yellow then pink, then teal, then springgreen, and repeat;
- * during each font-color cycle it will pause for one second and then transition to the next color in 0.5 seconds;
+ * during each text color cycle it will pause for one second and then transition to the next color in 0.5 seconds;
  * this behavior will be applied to the HTML elements queried by the string "#testText"
  *
  * the call to the instance's startColors() function will initialize the color cycling behavior.
