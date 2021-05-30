@@ -35,6 +35,12 @@ var ColorCycles = /** @class */ (function () {
 }());
 ;
 // example implementation
+var exampleColors = new ColorCycles({
+    colors: ["pink", "violet", "orange", "paleturquoise", "lightgreen", "aqua", "plum", "peachpuff"],
+    pause: 500,
+    transition: '0.5s',
+    elemQueries: ["#example"]
+});
 var myCustomFont = new ColorCycles({
     colors: ["yellow", "pink", "teal", "springgreen", "aqua", "orange", "fuchsia", "lavender"],
     pause: 1000,
@@ -53,6 +59,7 @@ var myCustomFont3 = new ColorCycles({
     transition: '0.3s',
     elemQueries: ["#otherId"]
 });
+exampleColors.startColors();
 myCustomFont.startColors();
 myCustomFont2.startColors();
 myCustomFont3.startColors();

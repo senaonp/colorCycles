@@ -27,6 +27,12 @@ class ColorCycles {
 
 
 // example implementation
+let exampleColors = new ColorCycles({
+	colors: ["pink", "violet", "orange", "paleturquoise", "lightgreen", "aqua", "plum", "peachpuff"],
+	pause: 500,
+	transition: '0.5s',
+	elemQueries: ["#example"],
+});
 let myCustomFont = new ColorCycles({
 	colors: ["yellow", "pink", "teal", "springgreen", "aqua", "orange", "fuchsia", "lavender"],
 	pause: 1000,
@@ -46,6 +52,7 @@ let myCustomFont3 = new ColorCycles({
 	elemQueries: ["#otherId"],
 });
 
+exampleColors.startColors();
 myCustomFont.startColors();
 myCustomFont2.startColors();
 myCustomFont3.startColors();
