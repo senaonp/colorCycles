@@ -8,6 +8,10 @@ class ColorCycles {
 		this.oscillate = (config.oscillate && config.oscillate == true) ? true : false;
 	}
 
+	static getRandomColor() {
+		return "rgb(" + Math.floor(Math.random()*256) + "," + Math.floor(Math.random()*256) + "," + Math.floor(Math.random()*256) + ")";
+	}
+
 	setOscillateCycles() {
 		this.colors = this.colors.concat(this.colors.slice(1, this.colors.length-1).reverse());
 	}
@@ -58,9 +62,16 @@ let myCustomFont3 = new ColorCycles({
 	oscillate: true,
 	elemQueries: ["#otherId"],
 });
+let randomColorsCycle = new ColorCycles({
+	colors: [ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor()],
+	pause: 2000,
+	transition: '1s',
+	elemQueries: ["#randomColorsExample"],
+});
 
 
 exampleColors.startColors();
 myCustomFont.startColors();
 myCustomFont2.startColors();
 myCustomFont3.startColors();
+randomColorsCycle.startColors();
