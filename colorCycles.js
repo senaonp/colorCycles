@@ -5,10 +5,16 @@ class ColorCycles {
 		this.transition = config.transition;
 		this.elemQueries = config.elemQueries;
 		this.currentColorIndex = 0;
+		this.oscillate = (config.oscillate && config.oscillate == true) ? true : false;
+	}
+
+	setOscillateCycles() {
+		this.colors = this.colors.concat(this.colors.slice(1, this.colors.length-1).reverse());
 	}
 
 	startColors() {
 		let thisObj = this; // pass the context of 'this' into setInterval scope
+		if (this.oscillate) { this.setOscillateCycles() };
 		setInterval(function() {
 				thisObj.currentColorIndex = (thisObj.currentColorIndex + 1 == thisObj.colors.length) ? 0 : thisObj.currentColorIndex + 1;
 		}, this.pause);
@@ -46,11 +52,13 @@ let myCustomFont2 = new ColorCycles({
 	elemQueries: ["#testText2", "#testText3"],
 });
 let myCustomFont3 = new ColorCycles({
-	colors: ["rgb(20,20,20)", "rgb(60,60,60)", "rgb(100,100,100)", "rgb(140,140,140)", "rgb(180,180,180)", "rgb(220,220,220)", "rgb(180,180,180)", "rgb(140,140,140)", "rgb(100,100,100)", "rgb(60,60,60)"],
+	colors: ["rgb(20,20,20)", "rgb(60,60,60)", "rgb(100,100,100)", "rgb(140,140,140)", "rgb(180,180,180)", "rgb(220,220,220)"],
 	pause: 300,
 	transition: '0.3s',
+	oscillate: true,
 	elemQueries: ["#otherId"],
 });
+
 
 exampleColors.startColors();
 myCustomFont.startColors();
