@@ -4,6 +4,7 @@ class ColorCycles {
 	transition: string;
 	elemQueries: Array<string>;
 	currentColorIndex: number;
+	oscillate?: boolean;
 
 	constructor(config) {
 		this.colors = config.colors;
@@ -11,6 +12,15 @@ class ColorCycles {
 		this.transition = config.transition;
 		this.elemQueries = config.elemQueries;
 		this.currentColorIndex = 0;
+		this.oscillate = (config.oscillate && config.oscillate == true) ? true : false;
+	}
+
+	static getRandomColor() {
+		return "rgb(" + Math.floor(Math.random()*256) + "," + Math.floor(Math.random()*256) + "," + Math.floor(Math.random()*256) + ")";
+	}
+
+	setOscillateCycles() {
+		this.colors = this.colors.concat(this.colors.slice(1, this.colors.length-1).reverse());
 	}
 
 	startColors() {
@@ -57,8 +67,15 @@ let myCustomFont3: ColorCycles = new ColorCycles({
 	transition: '0.3s',
 	elemQueries: ["#otherId"],
 });
+let randomColorsCycle: ColorCycles = new ColorCycles({
+	colors: [ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor()],
+	pause: 2000,
+	transition: '1s',
+	elemQueries: ["#randomColorsExample"],
+});
 
 exampleColors.startColors();
 myCustomFont.startColors();
 myCustomFont2.startColors();
 myCustomFont3.startColors();
+randomColorsCycle.startColors();

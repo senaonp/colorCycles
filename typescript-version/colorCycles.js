@@ -5,7 +5,14 @@ var ColorCycles = /** @class */ (function () {
         this.transition = config.transition;
         this.elemQueries = config.elemQueries;
         this.currentColorIndex = 0;
+        this.oscillate = (config.oscillate && config.oscillate == true) ? true : false;
     }
+    ColorCycles.getRandomColor = function () {
+        return "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
+    };
+    ColorCycles.prototype.setOscillateCycles = function () {
+        this.colors = this.colors.concat(this.colors.slice(1, this.colors.length - 1).reverse());
+    };
     ColorCycles.prototype.startColors = function () {
         var thisObj = this; // pass the context of 'this' into setInterval scope
         setInterval(function () {
@@ -59,7 +66,14 @@ var myCustomFont3 = new ColorCycles({
     transition: '0.3s',
     elemQueries: ["#otherId"]
 });
+var randomColorsCycle = new ColorCycles({
+    colors: [ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor(), ColorCycles.getRandomColor()],
+    pause: 2000,
+    transition: '1s',
+    elemQueries: ["#randomColorsExample"]
+});
 exampleColors.startColors();
 myCustomFont.startColors();
 myCustomFont2.startColors();
 myCustomFont3.startColors();
+randomColorsCycle.startColors();
