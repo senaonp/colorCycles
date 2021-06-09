@@ -75,9 +75,16 @@ let randomColorsCycle: ColorCycles = new ColorCycles({
 	transition: '1s',
 	elemQueries: ["#randomColorsExample"],
 });
+let multiElementColorsCycle: ColorCycles = new ColorCycles({
+	colors: ["pink", "springgreen", "orange", "aqua", "yellow", "fuchsia"],
+	pause: 1000,
+	transition: '0.5s',
+	elemQueries: [".multiQueryClass", "#multiQueryId", "#multiQueryId2"],
+});
 
 exampleColors.startColors();
 myCustomFont.startColors();
 myCustomFont2.startColors();
 myCustomFont3.startColors();
 randomColorsCycle.startColors();
+multiElementColorsCycle.startColors();
