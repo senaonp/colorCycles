@@ -12,7 +12,7 @@ class ColorCycles {
 		this.transition = config.transition;
 		this.elemQueries = config.elemQueries;
 		this.currentColorIndex = 0;
-		this.oscillate = (config.oscillate && config.oscillate == true) ? true : false;
+		this.oscillate = config.oscillate && config.oscillate == true;
 	}
 
 	static getRandomColor(): string {
